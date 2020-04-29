@@ -1,0 +1,131 @@
+<!-- This is used for a accordion -->
+<section>
+	<div class= "faqcontainer">
+		<div class="accordion">
+			<div class="accordion-item" id="#question1">
+				<button class="accordionbutton">Section 1</button>
+				<a class="accordion-link" href="#question1">
+					What is a martial art?
+					<i class="icon ion-md-add"></i>
+					<i class="icon ion-md-remove"></i>
+				</a>
+				<div class="answer">
+					<p>
+						A martial art is a hfkdfhdksjnhfjkd.
+					</p>
+				</div>
+			</div>
+			
+			<div class="accordion-item" id="#question2">
+				<button class="accordionbutton">Section 1</button>
+				<a class="accordion-link" href="#question2">
+					What is a good martial art?
+					<i class="icon ion-md-add"></i>
+					<i class="icon ion-md-remove"></i>
+				</a>
+				<div class="answer">
+					<p>
+						A good martial art depends on what you like.
+					</p>
+				</div>
+			</div>
+			
+			<div class="accordion-item" id="#question3">
+				<button class="accordionbutton">Section 1</button>
+				<a class="accordion-link" href="#question3">
+					Why is aikido bad?
+					<i class="icon ion-md-add"></i>
+					<i class="icon ion-md-remove"></i>
+				</a>
+				<div class="answer">
+					<p>
+						The techniques used in aikido do not work in a real combat situation.
+					</p>
+				</div>
+			</div>
+			
+			<div class="accordion-item" id="#question4">
+				<button class="accordionbutton">Section 1</button>
+				<a class="accordion-link" href="#question4">
+					Which martial art should I start first?
+					<i class="icon ion-md-add"></i>
+					<i class="icon ion-md-remove"></i>
+				</a>
+				<div class="answer">
+					<p>
+						Wrestling is a great foundation.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+/* For the accordion in faq page */
+/*section used for centering process */
+section{
+	width: 100%;
+	height: 100vh;
+	background-color: red;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.faqcontainer{
+	width: 100%;
+	max-width: 80rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.accordion-item{
+	background-color: green;
+	border-radius: .4rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	box-shadow: .5rem 2px .5rem blue;
+}
+
+.accordion-link{
+	font-size: 1.6rem;
+	color: rgba(255,255,255,.8);
+	text-decoration: none;
+	background-color: black;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 0;
+}
+
+.answer{
+	max-height: 0;
+	overflow: hidden;
+	position: relative;
+	background-color: purple;
+	transition: max-height 650ms;
+}
+
+.answer::before{
+	content: "";
+	position: absolute;
+	width: .6rem;
+	height: 90%;
+	background-color: gray;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%); /* To make it stay in the middle */
+}	
+
+.answer p{
+	color: rgba(255,255,255,.6);
+	font-size: 1.4rem;
+	padding: 2rem;
+}
+/* when answer is clicked. These styles will apply */
+.accordion-item:target .answer{
+	max-height: 20rem;
+}

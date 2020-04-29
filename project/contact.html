@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html lang = "EN">
+<head>
+<title>Contact - Enlightenment MMA</title>
+<meta charset = "UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" type = "text/css"  href = "styles/project.css" />
+	<link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://students.cpcc.edu/~flopez10/web110/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://students.cpcc.edu/~flopez10/web110/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://students.cpcc.edu/~flopez10/web110/favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<header>
+  <div data-include="components/header.html"></div>
+</header>
+<main>
+<h1>Contact us</h1>
+<h2>We would love to hear from you!</h2>
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	
+	<label for="email">E-mail:</label>
+	<input type="text" id="email" name="email" placeholder="Your E-mail..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</main>
+<footer>
+<div data-include="components/footer.html"></div>
+</footer>
+<script src="scripts/HTMLInclude.js"></script>
+</body>
+</html>

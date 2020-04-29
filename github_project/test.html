@@ -1,0 +1,225 @@
+<html>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: teal;
+            background-color: wheat;
+        }
+
+        iframe
+        {
+            width : 100%;
+            border : 2px dotted aqua;
+            background-color: white;
+        }
+    </style>
+
+    <script>
+
+        var baseURL = "http://students.cpcc.edu/~";
+
+        var baseCourseURL = "/web110/";
+                
+        var preferredSuffix = ".html";
+
+        // for folders add the /, otherwise just use page name. May need to enhance this
+        // later for jpgs and difference between html and htm and .js and def for default.css
+        var listOfItems = [     "template", 
+                                "contract", 
+                                "introduction", 
+                                "hobby", 
+                                "recipe", 
+                                "images/", 
+                                "styles/", 
+                                "scripts/",
+                                "project/"
+                            ];
+
+                            var listOfURLs = []; 
+
+        function buildURLs(_loginId)
+        {
+            var buildingList = [];
+            
+            for(var i = 0; i < listOfItems.length; i++)
+            {
+                var currentItem = listOfItems[i];
+                // result = (condition) ? 'something' : 'somethingelse';
+                // if it ends with /, it's folder no extension, else add extension 
+                if((currentItem.charAt(currentItem.length - 1)) !== "/")
+                { // evaluate last character if it's NOT a / it needs an extension
+                     currentItem += preferredSuffix;
+                }
+
+                var completeURL = baseURL + _loginId + baseCourseURL + currentItem;
+
+                //console.log(completeURL);
+
+                buildingList.push(completeURL);
+            }
+            return buildingList;
+        }                    
+
+
+
+function runResults()
+{
+
+    var currentUserLogin = document.getElementById("loginid").value;
+    var currentUserCourse = document.getElementById("course").value;
+    baseCourseURL = "/" + currentUserCourse + "/";
+    var message = currentUserCourse + " Progress for " + currentUserLogin + ":";
+
+    document.getElementById("displayid").innerHTML = message;
+
+    listOfURLs = buildURLs(currentUserLogin);
+
+   // console.log("The URLS are: " + listOfURLs);
+
+    for(var i = 0; i < listOfURLs.length; i++)
+    {
+        var currentURL = listOfURLs[i];
+        console.log(i + ") " + currentURL + "\n"); //OutPut as clickable link
+
+        var aHeading = document.createElement("h3");
+        aHeading.innerHTML = "Trying to load: " + currentURL; // This line builds the string that displays on the screen
+        document.body.appendChild(aHeading);
+
+        var anIframe = document.createElement("iframe");
+        anIframe.src = listOfURLs[i];
+        document.body.appendChild(anIframe);
+    }
+    /* Original code by DI. 
+    for(var i = 0; i < listOfURLs.length; i++)
+    {
+        var currentURL = listOfURLs[i];
+        console.log(i + ") " + currentURL + "\n"); //OutPut as clickable link
+
+        var aHeading = document.createElement("h3");
+        aHeading.innerHTML = "Loading: " + currentURL; // This line builds the string that displays on the screen
+        document.body.appendChild(aHeading);
+
+        var anIframe = document.createElement("iframe");
+        anIframe.src = listOfURLs[i];
+        document.body.appendChild(anIframe);
+    } */
+}
+
+/*
+function makeIframes() 
+{
+  var anIframe = document.createElement("iframe");
+  anIframe.src = "http://students.cpcc.edu/~flopez10/web110/contract.html";
+  document.body.appendChild(anIframe);
+}
+
+*/
+
+// Assuming "?post=1234&action=edit"
+/*
+    var urlParams = new URLSearchParams(window.location.search);
+
+    console.log(urlParams.has('post')); // true
+    console.log(urlParams.get('action')); // "edit"
+    console.log(urlParams.getAll('action')); // ["edit"]
+    console.log(urlParams.toString()); // "?post=1234&action=edit"
+    console.log(urlParams.append('active', '1')); // "?post=1234&action=edit&active=1"
+
+        var keys = urlParams.keys();
+        for(key of keys) 
+        { 
+            console.log(key); 
+        }
+        // post
+        // action
+
+        var entries = urlParams.entries();
+        for(pair of entries) 
+        { 
+            console.log(pair[0], pair[1]); 
+        }
+
+        function getUrlParameter(name) 
+        {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+*/
+
+    </script>
+    </head>
+    <body>
+    
+
+
+<!--
+    <p>Click the button to make an iframe or more...</p>
+
+<button onclick="makeIframes()">Make Another</button>
+-->
+
+
+
+<input type = "text" name = "loginid" value = "jscott52" id = "loginid">
+<input type = "text" name = "course" value = "web110" id = "course">
+
+<input type = "button" value = "Do It!" onclick = "runResults()"> 
+<h1 id = "displayid">Submit information in the form above.</h1> 
+    <p> Application will accept user id's and then test several things from their page to see if they are properly set up. This version loads things into an iframe - so you have to manually see if they are there.
+    </p>
+
+  
+  <!--
+    <iframe src="https://students.cpcc.edu/~flopez10/" style = "width:100%" id = "iframe_webspace">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+      
+    <h2>Class Folder ... looking for web110 folder</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+
+    <h2>Images Folder ... looking for web110/images/ folder</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/images/" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+
+    <h2>Styles Folder ... looking for web110/styles/ folder</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/styles/" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+
+    <h2>Scripts Folder ... looking for web110/scripts/ folder</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/scripts/" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+      
+    <h2>Template ... looking for template.html inside web110 folder</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/template.html" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    
+    <h2>Contract</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/contract.html" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+      
+    <h2>Introduction</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/introduction.html" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+
+    <h2>Hobby</h2>
+    <iframe src="https://students.cpcc.edu/~flopez10/web110/hobby.html" style = "width:100%">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+-->
+
+</body>
+</html>

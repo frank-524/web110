@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='EN'>
+
+<head>
+    <meta charset='utf-8'>
+    <title> WebCheck </title>
+    <link rel='stylesheet' type='text/css' href='styles/stylesheet.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel='icon' href='favicon.ico' />
+</head>
+
+<body>
+
+    <header>
+        <div id='topnav'>
+            <img src='images/logo.png' height='50' width='50' alt='logo' id='logo'>
+            <h2 id='logotext'>WebCheck Pro</h2>
+        </div>
+    </header>
+
+    <main>
+        <p> The purpose of this website is to check if a students webspace is properly set up. </p>
+        <p> Enter a valid Student ID in the box below to begin. </p>
+        <br>
+        <div class='form-box'>
+            <form name="userId" onsubmit="return validateForm()" method= "post">
+                <label for='userId'>Student ID:</label>
+                <input type='text' id='userId' name='userId' placeholder='ID' required="required">
+                <input type="submit" value="Submit">
+                <script src='scripts/default.js'></script>
+            </form>
+        </div>
+
+        <div id='output'>
+            <p><b>Output:</b></p>
+        </div>
+    </main>
+
+    <footer>
+        <p align='center'>Designed in 2020 by Jaime Scott</p>
+    </footer>
+</body>
+
+</html>

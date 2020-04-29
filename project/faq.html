@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang = "EN">
+<head>
+<title>FAQ - Enlightenment MMA</title>
+<meta charset = "UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" type = "text/css"  href = "styles/project.css" />
+	<link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://students.cpcc.edu/~flopez10/web110/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://students.cpcc.edu/~flopez10/web110/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://students.cpcc.edu/~flopez10/web110/favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<!-- Ion icons -->
+	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div data-include="components/header.html"></div>
+</header>
+<main>
+<div id = "gallery">
+<h1>Frequently Asked Questions (FAQ)</h1>
+<button class="accordion">What is a martial art?</button>
+<div class="panel">
+  <p>According to the Merriam-webster dictionary, a martial art is "any of several arts of combat and self-defense (such as karate and judo) that are widely practiced as sport".</p>
+</div>
+
+<button class="accordion">What is the best martial art? </button>
+<div class="panel">
+  <p>There is no "best" martial art. There are many forms of martial arts that exist! The answer to this question is subjective. Depending on who you ask, you will get different answers.</p>
+</div>
+
+<button class="accordion">Which martial arts are effective for self-defense?</button>
+<div class="panel">
+  <p>It depends on the situation. Use your best judgment on how to handle the situation. Against multiple attackers striking is the best option. 
+  In a one-on-one match, grappling will work if your opponent doesn't know how to grapple. Effective martial arts to learn are boxing, muay thai, wrestling, BJJ, and judo. 
+  You don't have to learn all of them. Knowing boxing and wrestling are good enough. There are more martial arts that are effective. 
+  But these are some of the most popular!
+  </p>
+  <p>In the video below Joe Rogan and Eddie Bravo discuss street fights. WARNING NSFW!</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/OVx1ot7NpqE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<button class="accordion">Who wins a grappler or a striker in a one on one fight?</button>
+<div class="panel">
+  <p>The odds favor the grappler more. A striker who doesn't know how to defend takedowns is most likely to lose!</p>
+</div>
+
+<button class="accordion">Which martial art should I learn first?</button>
+<div class="panel">
+  <p>There is no perfect answer. According to multiple accounts like Joe Rogan, grappling martial arts provides a strong foundation. Ultimately, it depends on what you like. Try some out and see which ones you like!</p>
+</div>
+
+<button class="accordion">Which martial arts are useless?</button>
+<div class="panel">
+  <p>Technically speaking, each martial art has its uses. However, some martial arts that exist do not work in combat. Traditional martial arts like tai-chi claim to help with self-defense. But this is not true. Tai-chi, aikido, qigong, and Baguazhang do not work in a combat scenario. Some people or sources will claim otherwise do not fall for it! </p>
+  <p>This video explains how MMA exposed traditional martial arts.</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ap0Z1sqPrM0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+</div>
+
+<button class="accordion">How can I learn MMA?</button>
+<div class="panel">
+  <p>
+  You can't just "learn MMA" since MMA is not martial art. MMA is a sport that combines martial arts together. To be good at MMA you will need to learn other martial arts. 
+  These martial arts include BJJ, boxing, muay thai, wrestling, and more. 
+  Most MMA gyms will teach different martial arts styles together. If there are no MMA gyms near you, then pick a martial art get good at it then learn a new one! 
+  </p>
+</div>
+
+<button class="accordion">Why is MMA not considered a martial art?</button>
+<div class="panel">
+  <p>
+  This is a highly debated topic. MMA can be categorized as a hybrid of martial arts. Some people do not consider MMA a martial art, while some people do. 
+  Whatever your opinion may be, it is undisputed that MMA is a sport. 
+  </p>
+  <p>This video explains why MMA is not a martial art and also explains which martial arts help in MMA.</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ThS-yBB7tHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+</main>
+<footer>
+<div data-include="components/footer.html"></div>
+</footer>
+<script src="scripts/HTMLInclude.js"></script>
+</body>
+</html>

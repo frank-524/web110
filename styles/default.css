@@ -1,7 +1,7 @@
 body  
 {
 	background-color: azure; 
-	font-family: Courier New;
+	font-family: 'Sen', sans-serif;
 	margin-top: 25px;
 	margin-bottom: 25px;
 	margin-right: auto;
@@ -14,7 +14,7 @@ body
 h1
 {
 	text-align: center;
-	font-family: Courier New;
+	font-family: 'Sen', sans-serif;
 }
 
 figure
@@ -28,6 +28,69 @@ figcaption
 	font-style: italic;
 }	
 
+img.screenshot 
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.center
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#gallery a {text-decoration: none; color: #333;
+			font-style: italic; }
+#gallery span { display: none; }
+
+#gallery a:hover span { display: block; 
+						position: absolute;
+						 top: 10px; left: 300px; text-align: center; }
+ 
+table 
+{
+	width: 100%;
+	margin: auto;
+	border-collapse: collapse;
+}
+ 
+caption
+{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+	
+#instructions
+{
+	width: 100%;
+	margin: auto;
+}
+
+td
+{
+	border: groove green;
+}
+
+table tr:hover {
+  background-color: silver;
+}
+/* unvisited link */
+
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+	 
 footer
 {
 	text-align: center;	

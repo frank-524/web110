@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>URL</title>
+<script type="text/javascript">
+    function validate() {
+        var url = document.getElementById("url").value;
+        var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+        if (pattern.test(url)) {
+            alert("Url is valid");
+            return true;
+        } 
+            alert("Url is not valid!");
+            return false;
+ 
+    }
+</script>
+ 
+</head>
+<body>
+URL :
+<input type="text" name="url" id="url" />
+<input type="submit" value="Check" onclick="validate();" />
+
+</body>
+<body>
+URL :
+<input type="text" name="url" id="url" />
+<input type="submit" value="Check" onclick="validate();" />
+<script src='url-javascript.js'></script>
+
+</body>
+</html>
